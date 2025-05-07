@@ -1,0 +1,13 @@
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+    const userIp = req.ip;  // Get the user's IP address
+    console.log('User IP Address: ' + userIp);  // Log it to the console
+    res.send('Your IP address has been logged in the console.');
+});
+
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
